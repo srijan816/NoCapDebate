@@ -253,7 +253,19 @@ final class SetupViewModel {
         nextDrillType = homeState.nextDrillType
         nextDrillPrompt = homeState.nextDrillPrompt
         maxDurationSeconds = homeState.nextDrillMaxDurationSeconds
-        applyProgress(homeState)
+        applyProgress(
+            CoachProgress(
+                studentId: homeState.studentId,
+                xp: homeState.xp,
+                streak: homeState.streak,
+                gems: homeState.gems,
+                leagueTier: homeState.leagueTier,
+                dailyXp: homeState.dailyXp,
+                dailyGoal: homeState.dailyGoal,
+                level: homeState.level,
+                nextLevelXp: homeState.nextLevelXp
+            )
+        )
     }
 
     private func applyLeague(_ league: LeagueSnapshot) {
